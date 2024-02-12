@@ -12,7 +12,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+       return 'Qui ci sono i projects';
     }
 
     /**

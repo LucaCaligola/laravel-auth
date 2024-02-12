@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware('auth')->get('/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
+Route::get('', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')
+    ->name('admin')
+    ->prefix('admin')
+    ->group(function() {
+        Route::get('/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
+        Route::resource('/projects', AdminProjectController::class);
+
+
+    });
 
