@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('admin.dashboard');
     }
 }

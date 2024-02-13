@@ -29,9 +29,7 @@
                                 {{ $project->id }}
                             </th>
                             <td>
-                                {{-- <a href="{{ route('admin.posts.show', $project) }}"> --}}
-                                    {{ $project->title }}
-                                {{-- </a> --}}
+                                {{ $project->title }}
                             </td>
                             <td>
                                 {{ $project->description }}
@@ -48,11 +46,11 @@
                             </td>
                             
                                 <td>
-                                {{-- <a href="{{ route('admin.posts.show', $post) }}" class="text-decoration-none"> --}}
+                                <a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none">
                                     <button class="btn btn-sm btn-primary">
                                         View
                                     </button>
-                                {{-- </a> --}}
+                                </a>
                                 </td>
                                 {{-- <a href="{{ route('admin.posts.edit', $post) }}" class="text-decoration-none"> --}}
                                 <td>
@@ -60,7 +58,12 @@
                                         Edit
                                     </button>
                                 {{-- </a> --}}
-                               
+                                </td>
+
+                                <td>
+                                    <button class="btn btn-sm btn-warning">
+                                        Delete
+                                    </button>
                                 </td>
                         </tr>
                     @empty

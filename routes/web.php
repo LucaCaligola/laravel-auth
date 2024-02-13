@@ -19,13 +19,15 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/projects/{project}', [AdminProjectController::class, 'show'])->name('admin.projects.show');
+
 Route::middleware('auth')
     ->name('admin')
     ->prefix('admin')
     ->group(function() {
         Route::get('/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
         Route::resource('/projects', AdminProjectController::class);
-
+        Route::get('/projects/{project}', [AdminProjectController::class, 'show'])->name('admin.projects.show');
 
     });
 

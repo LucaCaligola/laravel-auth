@@ -18,7 +18,7 @@ class ProjectSeeder extends Seeder
                 'title'=> 'Boolzapp',
                 'description'=> 'Boolzapp è una replica della famossissima Whatsapp',
                 'date'=> '2023-12-7',
-                'picture'=> asset('resouces/img/boolzapp.png'),
+                'picture'=> asset('img/boolzapp.png'),
                 'project_url'=> 'https://github.com/LucaCaligola/vue-boolzapp',
                 'languages'=> 'Javascript, HTML, CSS'
             ),
@@ -27,7 +27,7 @@ class ProjectSeeder extends Seeder
                 'title'=> 'Spotify Web',
                 'description'=> 'Replica di Spotify',
                 'date'=> '2023-10-26',
-                'picture'=> asset('resouces/img/spotify.png'),
+                'picture'=> asset('img/spotify.png'),
                 'project_url'=> 'https://github.com/LucaCaligola/vue-boolzapp',
                 'languages'=> 'HTML, CSS'
             ),
@@ -35,7 +35,7 @@ class ProjectSeeder extends Seeder
                 'title'=> 'Dashboard',
                 'description'=> 'Dashboard di un sito web',
                 'date'=> '2023-12-17',
-                'picture'=> asset('resouces/img/dashboard.png'),
+                'picture'=> asset('img/dashboard.png'),
                 'project_url'=> 'https://github.com/LucaCaligola/html-css-bootstrap-dashboard',
                 'languages'=> 'HTML, CSS'
             )
