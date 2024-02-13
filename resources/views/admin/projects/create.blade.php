@@ -1,22 +1,23 @@
+@extends('layouts.admin')
+
+@section('title', 'Create new post')
+
+@section('main-content')
+
 <section class="form-container container">
         <div class="row justify-content-center">
             <div class="col-6">
                 <h1 class="title mb-4 pt-3">
-                    Crea nuovo fumetto
+                    Aggiunti un nuovo Progetto
                 </h1>
-                <form action="{{ route('comics.store') }}" method="POST" >
+                <form action="{{ route('admin.projects.store') }}" method="POST" >
                     @csrf
 
                     <div class="mb-3">
-                        <label for="titolo"class="form-label">
-                            Titolo del Fumetto:
+                        <label for="title"class="form-label">
+                            Nome del progetto
                         </label>
                         <input type="text" name="title" id="title" class="form-control">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="tipo"class="form-label">Foto di copertina:</label>
-                        <input type="text" name="thumb" id="thumb" class="form-control">
                     </div>
 
                     <div class="mb-3">
@@ -25,29 +26,26 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="price"class="form-label">Prezzo:</label>
-                        <input type="text" name="price" id="price" class="form-control">
+                        <label for="date"class="form-label">Data di pubblicazione:</label>
+                        <input type="date" name="date" id="date" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label for="series"class="form-label">Serie</label>
-                        <input type="text" name="series" id="series" class="form-control">
+                        <label for="picture"class="form-label">Foto progetto:</label>
+                        <input type="text" name="picture" id="picture" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label for="sale_date"class="form-label">Data di ventida:</label>
-                        <textarea type="text" name="sale_date" id="sale_date" class="form-control"
-                        rows="4">
-                        </textarea>
+                        <label for="project_url"class="form-label">Link del progetto</label>
+                        <input type="string" name="project_url" id="project_url" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label for="descrizione"class="form-label">Tipologia:</label>
-                        <textarea type="text" name="type" id="type" class="form-control"
-                        rows="4">
-                        </textarea>
+                        <label for="languages"class="form-label">Linguaggi utilizzati</label>
+                        <input type="string" name="languages" id="project_url" class="form-control">
                     </div>
 
+                    
 
                     <button type="submit" class="btn btn-primary">Crea nuovo fumetto</button>
                     <button type="reset"  class="btn btn-warning">Pulisci il form</button>
@@ -55,3 +53,5 @@
             </div>
         </div>
     </section>
+
+    @endsection

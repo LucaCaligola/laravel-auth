@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section ('title', 'Dashboard')
+@section ('title', 'Projects')
 
 @section('main-content')
 
@@ -46,18 +46,19 @@
                             </td>
                             
                                 <td>
-                                <a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none">
-                                    <button class="btn btn-sm btn-primary">
-                                        View
-                                    </button>
-                                </a>
+                                    <a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none">
+                                        <button class="btn btn-sm btn-primary">
+                                            View
+                                        </button>
+                                    </a>
                                 </td>
-                                {{-- <a href="{{ route('admin.posts.edit', $post) }}" class="text-decoration-none"> --}}
+                                
                                 <td>
-                                    <button class="btn btn-sm btn-success">
-                                        Edit
-                                    </button>
-                                {{-- </a> --}}
+                                    {{-- <a href="{{ route('admin.projects.edit', $project) }}" class="text-decoration-none"> --}}
+                                        <button class="btn btn-sm btn-success">
+                                            Edit
+                                        </button>
+                                    </a>
                                 </td>
 
                                 <td>
@@ -79,9 +80,11 @@
     </table>
 
     <div class="create">
+        <a href="{{ route('admin.projects.create') }}">
         <button class="btn btn-danger">
             Aggiungi Progetto
         </button>
+        </a>
     </div>
 </div>
 @endsection
