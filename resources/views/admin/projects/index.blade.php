@@ -77,5 +77,11 @@
                 </tbody>
 
     </table>
+
+    <div class="create">
+        <button class="btn btn-danger">
+            Aggiungi Progetto
+        </button>
+    </div>
 </div>
 @endsection
