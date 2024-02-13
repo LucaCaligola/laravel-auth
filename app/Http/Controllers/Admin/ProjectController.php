@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -11,8 +12,9 @@ class ProjectController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-       return 'Qui ci sono i projects';
+    {  
+        $projects = Project::all();
+        return view('admin.projects.index',compact ('projects'));
     }
 
     /**

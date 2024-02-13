@@ -1,1 +1,78 @@
- 
+@extends('layouts.admin')
+
+@section ('title', 'Dashboard')
+
+@section('main-content')
+
+<div class="m-3">
+    <h1 class="text-center">
+       Ecco i tuoi Progetti {{ Auth::user()->name }}
+    </h1>
+</div>
+<div class="container">
+    <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Project Url</th>
+                        <th scope="col">Languages</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ( $projects as $project )
+                        <tr>
+                            <th scope="row">
+                                {{ $project->id }}
+                            </th>
+                            <td>
+                                {{-- <a href="{{ route('admin.posts.show', $project) }}"> --}}
+                                    {{ $project->title }}
+                                {{-- </a> --}}
+                            </td>
+                            <td>
+                                {{ $project->description }}
+                            </td>
+                            <td>
+                                {{ $project->date }}
+                            </td>
+                            <td>
+                                {{ $project->project_url }}
+                            </td>
+
+                            <td>
+                                {{ $project->languages }}
+                            </td>
+                            
+                                <td>
+                                {{-- <a href="{{ route('admin.posts.show', $post) }}" class="text-decoration-none"> --}}
+                                    <button class="btn btn-sm btn-primary">
+                                        View
+                                    </button>
+                                {{-- </a> --}}
+                                </td>
+                                {{-- <a href="{{ route('admin.posts.edit', $post) }}" class="text-decoration-none"> --}}
+                                <td>
+                                    <button class="btn btn-sm btn-success">
+                                        Edit
+                                    </button>
+                                {{-- </a> --}}
+                               
+                                </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4">
+                                There are no posts available
+                            </td>
+                        </tr>
+                    @endforelse
+
+                </tbody>
+
+    </table>
+</div>
+@endsection
