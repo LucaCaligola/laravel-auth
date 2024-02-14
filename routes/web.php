@@ -20,19 +20,19 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::middleware('auth')->name('ciccio.')->prefix('admin')->group(function () {
+Route::middleware('auth')->name('admin.')->prefix('admin')->group(function () {
     Route::resource('/projects', AdminProjectController::class);
 });
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// Route::middleware('auth')
-//     ->name('admin.')
-//     ->prefix('admin')
-//     ->group(function() {
-//         // Route::get('/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
-//         Route::resource('/projects', AdminProjectController::class);
+Route::middleware('auth')
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function() {
+        // Route::get('/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
+        Route::resource('/projects', AdminProjectController::class);
 //         // Route::get('/projects/{project}', [AdminProjectController::class, 'show'])->name('admin.projects.show');
 //         // Route::post('/admin/projects', [AdminProjectController::class, 'store'])->name('admin.project.store');
 //         // Route::get('/admin/projects/create', [AdminProjectController::class, 'create'])->name('admin.projects.create');
@@ -44,4 +44,5 @@ Route::middleware('auth')->name('ciccio.')->prefix('admin')->group(function () {
 
 
 
-
+    
+    });

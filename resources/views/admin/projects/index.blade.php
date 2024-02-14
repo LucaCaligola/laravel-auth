@@ -54,7 +54,7 @@
                                 </td>
                                 
                                 <td>
-                                    {{-- <a href="{{ route('admin.projects.edit', $project) }}" class="text-decoration-none"> --}}
+                                    <a href="{{ route('admin.projects.edit', $project) }}" class="text-decoration-none">
                                         <button class="btn btn-sm btn-success">
                                             Edit
                                         </button>
