@@ -15,26 +15,28 @@
             <img src="{{ $project->picture }}" alt="">
 
             <p>
-                {{ $project->description }}
+                Descrizione: {{ $project->description }}
             </p>
             <p>
-                {{ $project->date }}
+                Data di pubblicazione: {{ $project->date }}
             </p>
-            <div class="p-5">
-                <p>
-                    {{ $project->project_url}}
-                </p>
-                <p>
-                    {{ $project->languages}}
-                </p>
-            </div>
+        
+            <p>
+                Link al progetto: {{ $project->project_url}}
+            </p>
+            <p>
+                Linguaggi: {{ $project->languages}}
+            </p>
+         
+            <a href="{{ route('admin.projects.edit', $project) }}" class="text-decoration-none">
                 <button class="btn btn-sm btn-success">
                     Edit
                 </button>
-                <button class="btn btn-sm btn-warning">
-                    Delete
-                </button>
-            </p>
+            </a>
+            <button class="btn btn-sm btn-warning">
+                Delete
+            </button>
+            
         </tr>
         </div>
     </div>

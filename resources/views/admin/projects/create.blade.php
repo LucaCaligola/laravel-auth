@@ -30,6 +30,10 @@
                         <input type="date" name="date" id="date" class="form-control">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="picture"class="form-label">Foto progetto:</label>
+                        <input type="text" name="picture" id="picture" class="form-control">
+                    </div>
 
                     <div class="mb-3">
                         <label for="project_url"class="form-label">Link del progetto</label>

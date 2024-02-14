@@ -51,18 +51,21 @@
                                             View
                                         </button>
                                     </a>
-                                </td>
                                 
-                                <td>
+                                
+                              
                                     <a href="{{ route('admin.projects.edit', $project) }}" class="text-decoration-none">
                                         <button class="btn btn-sm btn-success">
                                             Edit
                                         </button>
                                     </a>
-                                </td>
+                               
 
-                                <td>
-                                    <button class="btn btn-sm btn-warning">
+                               
+                                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST"></form>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-warning" type="submit">
                                         Delete
                                     </button>
                                 </td>

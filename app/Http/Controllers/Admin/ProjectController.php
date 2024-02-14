@@ -31,6 +31,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+      
         $newProject = Project::create($request->all());
         return to_route('admin.projects.show', $newProject);
     }
@@ -57,7 +58,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, project $project)
     {
         $project->update($request->all());
         return to_route('admin.projects.show', $project);
@@ -66,8 +67,9 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+     $project->delete();
+     return redirect ()->route('admin.projects.index');
     }
 }
