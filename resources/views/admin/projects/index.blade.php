@@ -81,9 +81,9 @@
 
     <div class="create">
         <a href="{{ route('admin.projects.create') }}">
-        <button class="btn btn-danger">
-            Aggiungi Progetto
-        </button>
+            <button class="btn btn-danger">
+                Aggiungi Progetto
+            </button>
         </a>
     </div>
 </div>

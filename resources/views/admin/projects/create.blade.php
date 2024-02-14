@@ -47,7 +47,7 @@
 
                     
 
-                    <button type="submit" class="btn btn-primary">Crea nuovo fumetto</button>
+                    <button type="submit" class="btn btn-primary">Crea nuovo progetto</button>
                     <button type="reset"  class="btn btn-warning">Pulisci il form</button>
                 </form>
             </div>
