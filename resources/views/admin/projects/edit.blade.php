@@ -17,12 +17,12 @@
                         <label for="title"class="form-label">
                             Nome del progetto
                         </label>
-                        <input type="text" name="title" id="title" class="form-control">
+                        <input type="text" name="title" id="title" class="form-control" value="{{ old( 'title' ,$project->title) }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="description"class="form-label">Descrizione:</label>
-                        <input type="text" name="description" id="description" class="form-control" value="{{ old( 'title' ,$project->title) }}">
+                        <input type="text" name="description" id="description" class="form-control" value="{{ old( 'title' ,$project->description) }}">
                     </div>
 
                     <div class="mb-3">
@@ -47,7 +47,7 @@
 
                     
                     <a href="{{ route('admin.projects.show', $project->id) }}">
-                    <button type="submit" class="btn btn-primary">Crea nuovo fumetto</button>
+                    <button type="submit" class="btn btn-primary">Modifica il progetto</button>
                     </a>
                     <button type="reset"  class="btn btn-warning">Pulisci il form</button>
                 </form>

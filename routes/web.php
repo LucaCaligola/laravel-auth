@@ -24,14 +24,14 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->group(function () {
     Route::resource('/projects', AdminProjectController::class);
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function() {
-        // Route::get('/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
+        Route::get('/admin/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
         Route::resource('/projects', AdminProjectController::class);
 //         // Route::get('/projects/{project}', [AdminProjectController::class, 'show'])->name('admin.projects.show');
 //         // Route::post('/admin/projects', [AdminProjectController::class, 'store'])->name('admin.project.store');
